@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ejercicio2.js"></script>
+    <style>
+        table{
+            text-align: left;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th{
+            background-color: #eef3ff;
+            padding-left: 0.5rem;
+        }
+        th,td{
+            border: 2px solid #a4b0f4;
+            padding-left: 0.5rem;
+            width: 100px;
+            height: 2rem;
+            font-weight: normal;
+        }
+        input{
+            width: 60px;
+        }
+    </style>
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <main>
+        <h1>ArgenFin</h1>
+        <h3>Oferta de créditos</h3>
+        <table>
+            <tr>
+                <th style="font-weight: bold;">Nombre</th>
+                <th style="font-weight: bold;">Capital</th>
+                <th style="font-weight: bold;">Plazo</th>
+                <th style="font-weight: bold;">Tasa</th>
+            </tr>
+            <tr>
+                <th>Plan 001</th>
+                <td id="plan-001-capital">150000</td>
+                <td id="plan-001-plazo">30 días</td>
+                <td id="plan-001-tasa">15%</td>
+            </tr>
+            <tr>
+                <th>Plan 002</th>
+                <td id="plan-002-capital">300000</td>
+                <td id="plan-002-plazo">180 días</td>
+                <td id="plan-002-tasa">10%</td>
+            </tr>
+            <tr>
+                <th>Plan 003</th>
+                <td id="plan-003-capital">485000</td>
+                <td id="plan-003-plazo">60 días</td>
+                <td id="plan-003-tasa">23%</td>
+            </tr>
+        </table>
+        <button onclick="mostrarInteres()">Calcular interés</button>
+        <div id="respuesta"></div>
+    </main>
+</body>
+</html>
