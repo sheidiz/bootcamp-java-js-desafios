@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ejercicio1.js"></script>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        table{
+            text-align: left;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        th{
+            background-color: #eef3ff;
+            padding-left: 0.5rem;
+        }
+        th,td{
+            border: 2px solid #a4b0f4;
+            padding-left: 0.5rem;
+            width: 100px;
+        }
+        input{
+            width: 60px;
+        }
+    </style>
+    <title>Ejercicio 1 - ArgenFin</title>
+</head>
+<body>
+    <main>
+        <h1>ArgenFin</h1>
+        <div class="flex-container">
+            <div class="ejercicio-1">
+                <h3>Flujo de caja del ultimo año:</h3>
+                <table>
+                    <tr style="height: 2rem;">
+                        <th>Periodo</th>
+                        <th>Ingreso</th>
+                        <th>Egreso</th>
+                    </tr>
+                    <tr>
+                        <th>Enero</th>
+                        <td><input type="text" name="user" id="ingreso-enero" value="1500"></td>
+                        <td><input type="text" name="user" id="egreso-enero" value="1500"></td>
+                    </tr>
+                    <tr>
+                        <th>Febrero</th>
+                        <td><input type="text" name="user" id="ingreso-febrero" value="2500"></td>
+                        <td><input type="text" name="user" id="egreso-febrero" value="2500"></td>
+                    </tr>
+                    <tr>
+                        <th>Marzo</th>
+                        <td><input type="text" name="user" id="ingreso-marzo" value="84683"></td>
+                        <td><input type="text" name="user" id="egreso-marzo" value="1155"></td>
+                    </tr>
+                    <tr>
+                        <th>Abril</th>
+                        <td><input type="text" name="user" id="ingreso-abril" value="135353"></td>
+                        <td><input type="text" name="user" id="egreso-abril" value="1533"></td>
+                    </tr>
+                    <tr>
+                        <th>Mayo</th>
+                        <td><input type="text" name="user" id="ingreso-mayo" value="1535"></td>
+                        <td><input type="text" name="user" id="egreso-mayo" value="5434"></td>
+                    </tr>
+                    <tr>
+                        <th>Junio</th>
+                        <td><input type="text" name="user" id="ingreso-junio" value="4343354"></td>
+                        <td><input type="text" name="user" id="egreso-junio" value="5434543"></td>
+                    </tr>
+                    <tr>
+                        <th>Julio</th>
+                        <td><input type="text" name="user" id="ingreso-julio" value="435453"></td>
+                        <td><input type="text" name="user" id="egreso-julio" value="4543"></td>
+                    </tr>
+                    <tr>
+                        <th>Agosto</th>
+                        <td><input type="text" name="user" id="ingreso-agosto" value="78351"></td>
+                        <td><input type="text" name="user" id="egreso-agosto" value="7816"></td>
+                    </tr>
+                    <tr>
+                        <th>Septiembre</th>
+                        <td><input type="text" name="user" id="ingreso-septiembre" value="1878"></td>
+                        <td><input type="text" name="user" id="egreso-septiembre" value="95634"></td>
+                    </tr>
+                    <tr>
+                        <th>Octubre</th>
+                        <td><input type="text" name="user" id="ingreso-octubre" value="48483"></td>
+                        <td><input type="text" name="user" id="egreso-octubre" value="9433"></td>
+                    </tr>
+                    <tr>
+                        <th>Noviembre</th>
+                        <td><input type="text" name="user" id="ingreso-noviembre" value="35483"></td>
+                        <td><input type="text" name="user" id="egreso-noviembre" value="54133"></td>
+                    </tr>
+                    <tr>
+                        <th>Diciembre</th>
+                        <td><input type="text" name="user" id="ingreso-diciembre" value="3843"></td>
+                        <td><input type="text" name="user" id="egreso-diciembre" value="348133"></td>
+                    </tr>
+                </table>
+                <button onclick="generaPerdidas()">¿Genera perdidas?</button>
+                <div><h3 id="respuesta"></h3></div>
+            </div>
+            <div class="ejercicio-2">
+                <h3>Oferta de créditos</h3>
+                <table>
+                    <tr>
+                        <th style="font-weight: bold;">Nombre</th>
+                        <th style="font-weight: bold;">Capital</th>
+                        <th style="font-weight: bold;">Plazo</th>
+                        <th style="font-weight: bold;">Tasa</th>
+                    </tr>
+                    <tr>
+                        <th>Plan 001</th>
+                        <td id="plan-001-capital">150000</td>
+                        <td id="plan-001-plazo">30 días</td>
+                        <td id="plan-001-tasa">15%</td>
+                    </tr>
+                    <tr>
+                        <th>Plan 002</th>
+                        <td id="plan-002-capital">300000</td>
+                        <td id="plan-002-plazo">180 días</td>
+                        <td id="plan-002-tasa">10%</td>
+                    </tr>
+                    <tr>
+                        <th>Plan 003</th>
+                        <td id="plan-003-capital">485000</td>
+                        <td id="plan-003-plazo">60 días</td>
+                        <td id="plan-003-tasa">23%</td>
+                    </tr>
+                </table>
+                <button onclick="mostrarInteres()">Calcular interés</button>
+                <div id="respuesta2"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
