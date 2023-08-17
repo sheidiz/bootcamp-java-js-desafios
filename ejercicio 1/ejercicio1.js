@@ -33,11 +33,12 @@ function obtenerPerdidas(){
     ];
     return egresos;
 }
-function situacion(ingresos,egresos){
+//--Funcion agregada pedida en el ejercicio
+function obtenerSituacionFlujoDeCaja(ingresos,egresos){
     const sumaIngresos = ingresos.reduce((prev,curr) => Number(prev) + Number(curr), 0);
-    console.log(sumaIngresos);
+    console.log('Suma Ingresos:', sumaIngresos);
     const sumaEgresos = egresos.reduce((prev,curr) => Number(prev) + Number(curr), 0);
-    console.log(sumaEgresos);
+    console.log('Suma Egresos:', sumaEgresos);
 
     if(sumaEgresos > sumaIngresos){
         return -1;
@@ -47,42 +48,47 @@ function situacion(ingresos,egresos){
         return 0;
     }
 }
-function generaPerdidas(){
+
+function obtenerResultadosDelFlujo(){
     const ingresos = obtenerIngresos();
     const egresos = obtenerPerdidas();
 
-    switch(situacion(ingresos,egresos)){
+    switch(obtenerSituacionFlujoDeCaja(ingresos,egresos)){
         case -1:
-            document.getElementById('respuesta').innerHTML = "Hay perdidas.";
+            document.getElementById('respuesta').innerHTML = "(-1) Hay perdidas.";
             break;
         case 1:
-            document.getElementById('respuesta').innerHTML = "Hay ganancias.";
+            document.getElementById('respuesta').innerHTML = "(1) Hay ganancias.";
             break;
         case 0:
-            document.getElementById('respuesta').innerHTML = "Egresos iguales a ganancias.";
+            document.getElementById('respuesta').innerHTML = "(0) Egresos iguales a ganancias.";
             break;
     }
 }
 
 
 // EJERCICIO PARTE 2
-function calcularInteres(capital,plazo,tasa){
-    return (capital * plazo * (tasa/100)) / 100;
-}
+
+//--Funcion modificada pedida en el ejercicio
 function cargarPlan(nombre){
     const nombrePlan = nombre.charAt(0).toUpperCase() + nombre.slice(1);
     const capital = document.getElementById(nombre + '-capital').innerText;
     const plazo = document.getElementById(nombre + '-plazo').innerText.slice(0,-5);
     const tasa = document.getElementById(nombre + '-tasa').innerText.slice(0,-1);
+    //Al cargar el plan ya calculo el interes
     const interes = calcularInteres(capital,plazo,tasa);
 
     const plan = {
         nombre: nombrePlan,
         capital,
+        plazo,
         tasa,
         interes
     }
     return plan;
+}
+function calcularInteres(capital,plazo,tasa){
+    return (capital * plazo * (tasa/100)) / 100;
 }
 function mostrarInteres(){
     const plan001 = cargarPlan('plan-001');
