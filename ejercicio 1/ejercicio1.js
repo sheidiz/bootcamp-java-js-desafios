@@ -32,17 +32,17 @@ function obtenerPerdidas(){
     ];
     return egresos;
 }
-function generaPerdidas(){
+function obtenerResultadosDelFlujo(){
     const ingresos = obtenerIngresos();
     const sumaIngresos = ingresos.reduce((prev,curr) => Number(prev) + Number(curr), 0);
-    console.log(sumaIngresos);
+    console.log('Suma Ingresos:', sumaIngresos);
 
     const egresos = obtenerPerdidas();
     const sumaEgresos = egresos.reduce((prev,curr) => Number(prev) + Number(curr), 0);
-    console.log(sumaEgresos);
+    console.log('Suma Egresos:', sumaEgresos);
     
     if(sumaIngresos > sumaEgresos){
-        document.getElementById('respuesta').innerHTML = "Se gana dinero.";
+        document.getElementById('respuesta').innerHTML = "Genera ganancias.";
     }else{
         document.getElementById('respuesta').innerHTML = "Genera perdidas.";
     }
